@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import HelloWorld from './HelloWorld.vue'
 import {fetchHello,fetchJSONData} from '@/api/index'
+let lhc = ref<string>('lhc')
 defineProps<{ msg: string }>()
 
 fetchHello().then((r)=>{
@@ -13,6 +15,8 @@ fetchJSONData().then((r)=>{
 
 <template>
   <h1>{{ msg }}</h1>
+  <HelloWorld :msg='lhc'>
+  </HelloWorld>
   </template>
 
 <style scoped>
