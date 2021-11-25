@@ -4,6 +4,7 @@
 import { ref } from 'vue'
 let routes = ref([
   { name: "home", path: "/" },
+  { name: "photograph", path: "/photograph" },
   { name: "testRoute", path: "/testRoute/30" },
   { name: "testProvide", path: "/testProvide" },
   { name: "testMixin", path: "/testMixin" },
@@ -16,7 +17,9 @@ let routes = ref([
   <router-link v-for="(item, index) in routes" :key="index" class="link" :to="item.path">
     <el-button>{{ item.name }}</el-button>
   </router-link>
-  <router-view />
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -24,7 +27,7 @@ let routes = ref([
   margin: 0 3px;
 }
 #app {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
