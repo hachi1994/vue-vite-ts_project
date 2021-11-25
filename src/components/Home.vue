@@ -2,10 +2,12 @@
 import { ref } from 'vue'
 import {fetchHello,fetchJSONData} from '@/api/index'
 defineProps<{ msg: string }>()
-
 fetchHello().then((r)=>{
   console.log(r.data)
 })
+function click(msg:string):void{
+  alert(msg)
+}
 fetchJSONData().then((r)=>{
   console.log(r)
 })
@@ -13,6 +15,7 @@ fetchJSONData().then((r)=>{
 
 <template>
   <h1>{{ msg }}</h1>
+  <el-button @click="click('1234')">Default</el-button>
   </template>
 
 <style scoped>
