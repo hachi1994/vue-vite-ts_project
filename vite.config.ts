@@ -26,7 +26,7 @@ export default defineConfig({
     port: 8090,
     proxy: {
       '/api': {
-        target: 'http://119.3.103.139:8002/',
+        target: 'http://api.jaelizumi.cn/',
         changeOrigin: true
       }
     }
