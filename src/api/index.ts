@@ -7,7 +7,12 @@ async function fetchJSONData(){
     let res =  await fetch('/api/getJsonData')
     return  res.json()
 }
+async function fetchCatImg() {
+    let res = await fetch('/api/getCatImgData')
+    return res.json()
+}
 export {
     fetchHello,
-    fetchJSONData
+    fetchJSONData,
+    fetchCatImg
 }

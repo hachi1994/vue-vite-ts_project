@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import Component from 'unplugin-vue-components/vite'
-import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
+import {ElementPlusResolver,AntDesignVueResolver} from 'unplugin-vue-components/resolvers'
 const path = require('path')
 import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 function _resolve(dir:string):string{
   return path.resolve(__dirname,dir)
 }
@@ -11,8 +11,11 @@ function _resolve(dir:string):string{
 export default defineConfig({
   plugins: [
     vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver(),AntDesignVueResolver()],
+    }),
     Components({
-      resolvers:[ElementPlusResolver()]
+      resolvers:[ElementPlusResolver(),AntDesignVueResolver()]
     })
   ],
   resolve: {
