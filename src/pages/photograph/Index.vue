@@ -11,7 +11,7 @@ export default defineComponent({
             if (res.code === 0) {
 
                 fetchCatImg().then(r => {
-                    r.data.forEach((e, i) => {
+                    r.data.forEach((e:any, i:any) => {
                         this.data.fileList.push({
                             name: e.name,
                             url: e.url
@@ -28,7 +28,7 @@ export default defineComponent({
             msg: '123'
         })
         fetchCatImg().then(r => {
-            r.data.forEach((e, i) => {
+            r.data.forEach((e:any, i:any) => {
                 data.fileList.push({
                     name: e.name,
                     url: e.url
